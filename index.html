@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Venkata Dinesh Valluru — Portfolio</title>
+  <meta name="description" content="Portfolio of Venkata Dinesh Valluru — Frontend Developer." />
+
+  <!-- Stop caching while we iterate -->
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+
+  <link rel="icon" href="assets/favicon.png" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { primary:'#2563EB', ink:'#0F172A', mute:'#475569' },
+          boxShadow: {
+            soft:'0 20px 40px rgba(15,23,42,0.08)',
+            card:'0 10px 24px rgba(15,23,42,0.06)',
+            lift:'0 10px 24px rgba(37,99,235,.18)'
+          }
+        },
+        container: { center: true, padding: '1rem' }
+      }
+    }
+  </script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css?v=11" />
+
+  <!-- Background force in case of cache -->
+  <style>
+    .bg-anim{background:
+      radial-gradient(1100px 520px at 10% -10%, #d9e6ff 0%, transparent 50%),
+      radial-gradient(1100px 520px at 90% -20%, #e7f2ff 0%, transparent 50%),
+      linear-gradient(180deg,#F3F7FF 0%,#ECF2FB 100%) !important;}
+  </style>
+</head>
+
+<body class="text-ink bg-[#F3F6FC] antialiased selection:bg-blue-200/60"
+      style="font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;">
+
+  <!-- Animated gradient background + faint shapes -->
+  <div class="bg-anim fixed inset-0 -z-10"></div>
+  <div class="bg-shapes pointer-events-none">
+    <span class="shape s1"></span>
+    <span class="shape s2"></span>
+    <span class="shape s3"></span>
+  </div>
+
+  <!-- Header -->
+  <header class="sticky top-0 z-50 border-b border-black/10 backdrop-blur-md bg-white/80">
+    <div class="container flex items-center justify-between py-3">
+      <a href="#home" class="font-extrabold tracking-wide text-xl" style="font-family:Poppins, Inter, sans-serif;">
+        VDV<span class="text-primary">.</span>
+      </a>
+
+      <nav id="nav" class="hidden gap-5 md:flex">
+        <a class="nav-link px-3 py-2 rounded-lg text-mute hover:bg-black/5 active" href="#home">Home</a>
+        <a class="nav-link px-3 py-2 rounded-lg text-mute hover:bg-black/5" href="#about">About</a>
+        <a class="nav-link px-3 py-2 rounded-lg text-mute hover:bg-black/5" href="#projects">Projects</a>
+        <a class="nav-link px-3 py-2 rounded-lg text-mute hover:bg-black/5" href="#contact">Contact</a>
+      </nav>
+
+      <button id="menuBtn" class="md:hidden rounded-lg px-3 py-2 hover:bg-black/5" aria-label="Open menu">☰</button>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobileNav" class="container hidden md:hidden pb-3">
+      <nav class="flex flex-col gap-2 rounded-xl border border-black/10 bg-white/95 p-2">
+        <a class="nav-link rounded-lg px-3 py-2 hover:bg-black/5" href="#home">Home</a>
+        <a class="nav-link rounded-lg px-3 py-2 hover:bg-black/5" href="#about">About</a>
+        <a class="nav-link rounded-lg px-3 py-2 hover:bg-black/5" href="#projects">Projects</a>
+        <a class="nav-link rounded-lg px-3 py-2 hover:bg-black/5" href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ========================= HOME ========================= -->
+  <section id="home" class="container py-16 md:py-20">
+    <div class="glass grid items-center gap-8 rounded-3xl p-6 md:grid-cols-[1.2fr_1fr]" data-animate="fade">
+      <div>
+        <p class="text-mute">Hello, I am</p>
+        <h1 class="mt-1 text-4xl md:text-5xl font-extrabold leading-tight" style="font-family:Poppins, Inter, sans-serif;">
+          VENKATA DINESH VALLURU
+        </h1>
+
+        <!-- Typing -->
+        <p class="mt-2 text-xl">
+          <span class="text-mute">I’m a&nbsp;</span>
+          <span id="typed" class="font-semibold"></span><span class="caret"></span>
+        </p>
+
+        <!-- CTAs -->
+        <div class="mt-5 flex flex-wrap gap-3">
+          <a href="#projects" class="btn-primary">View My Work</a>
+          <a href="#contact" class="btn-ghost">Contact Me</a>
+          <a href="assets/resume.pdf" target="_blank" rel="noopener" class="btn-ghost">Download Résumé</a>
+        </div>
+
+        <!-- Social -->
+        <div class="mt-4 flex flex-wrap gap-3">
+          <a target="_blank" href="https://github.com/vallurudineshnayadu-create" class="btn-chip">GitHub</a>
+          <a target="_blank" href="https://www.linkedin.com/in/venkata-dinesh-valluru-884822350/" class="btn-chip">LinkedIn</a>
+          <a href="mailto:vallurudineshnayadu@gmail.com" class="btn-chip">Email Me</a>
+          <span class="btn-chip bg-green-100 text-green-700 hover:bg-green-100">Open to Internships</span>
+        </div>
+
+        <!-- Skills -->
+        <div class="mt-6 flex flex-wrap gap-2">
+          <span class="chip">HTML5</span><span class="chip">CSS3</span><span class="chip">JavaScript</span>
+          <span class="chip">Responsive UI</span><span class="chip">React (learning)</span>
+        </div>
+
+        <!-- Highlights -->
+        <div class="mt-6 grid gap-3 sm:grid-cols-3">
+          <div class="glass-tile"><p class="text-sm text-mute">Education</p><p class="mt-1 font-semibold">B-Tech, 2nd Year</p></div>
+          <div class="glass-tile"><p class="text-sm text-mute">Location</p><p class="mt-1 font-semibold">India</p></div>
+          <div class="glass-tile"><p class="text-sm text-mute">Recent Projects</p><p class="mt-1 font-semibold">Music Recommender, Mini Store, Shoe Site</p></div>
+        </div>
+      </div>
+
+      <!-- HOME: Headshot circle (H1) with perfect mask & focus -->
+      <figure class="flex justify-center">
+        <div class="profile-ring h-48 w-48 md:h-64 md:w-64">
+          <div class="avatar-circle">
+            <img src="assets/hero.jpg" alt="Venkata Dinesh Valluru"
+                 class="avatar-img avatar-img--headshot" />
+          </div>
+        </div>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ========================= ABOUT ========================= -->
+  <section id="about" class="container py-12 md:py-16">
+    <div class="glass grid gap-7 rounded-3xl p-6 md:grid-cols-[0.9fr_1.1fr]" data-animate="fade">
+      <!-- ABOUT: Rounded Rectangle (R3) + gradient ring + soft inner shadow + full fit -->
+      <div class="flex justify-center items-start">
+        <div class="profile-ring-rect h-80 w-60 md:h-[440px] md:w-[340px]">
+          <div class="inner">
+            <img src="assets/hero.jpg" alt="Venkata Dinesh Valluru"
+                 class="h-full w-full rounded-3xl object-contain bg-white p-2" />
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <h2 class="text-3xl font-bold" style="font-family:Poppins, Inter, sans-serif;">About Me</h2>
+        <p class="mt-3 text-mute">
+          I’m a B-Tech 2nd year student and Frontend Developer skilled in HTML, CSS, JavaScript and responsive UI design.
+          I love building modern, visually polished websites that feel fast, clean and user-friendly.
+        </p>
+
+        <div class="mt-5 grid gap-3 sm:grid-cols-2">
+          <div class="glass-tile"><p class="text-sm font-semibold">Current</p><p class="text-mute">B-Tech (2nd year), Godavari Global University</p></div>
+          <div class="glass-tile"><p class="text-sm font-semibold">Focus</p><p class="text-mute">Frontend (HTML, CSS, JS), learning React</p></div>
+          <div class="glass-tile"><p class="text-sm font-semibold">Interests</p><p class="text-mute">UI/UX, open-source, clean design</p></div>
+          <div class="glass-tile"><p class="text-sm font-semibold">Goal</p><p class="text-mute">Internships & real-world projects</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================= PROJECTS ========================= -->
+  <section id="projects" class="container py-12 md:py-16">
+    <h2 class="text-3xl font-bold" style="font-family:Poppins, Inter, sans-serif;">Projects</h2>
+    <p class="text-mute">Some things I’ve built recently.</p>
+
+    <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <!-- Card 1 -->
+      <article class="tilt glass-card" data-animate="fade">
+        <div class="rounded-xl bg-white/90 p-2">
+          <img src="assets/proj-music.jpg" alt="Emotion-Based Music Recommender" class="h-64 w-full rounded-lg object-contain" />
+        </div>
+        <h3 class="mt-4 text-lg font-semibold text-ink">Emotion-Based Music Recommender</h3>
+        <p class="mt-1 text-sm text-mute">
+          Suggests songs based on detected emotion using a webcam + FER. Built with a Streamlit UI and a TensorFlow/Keras model (DeepFace) with OpenCV preprocessing.
+        </p>
+        <p class="mt-2 text-xs text-mute"><span class="font-semibold">Tech Stack:</span> Streamlit · Python · TensorFlow/Keras · DeepFace · OpenCV · NumPy</p>
+        <div class="mt-3 flex flex-wrap gap-2">
+          <span class="chip">Streamlit</span><span class="chip">Python</span><span class="chip">TensorFlow/Keras</span>
+          <span class="chip">DeepFace</span><span class="chip">OpenCV</span><span class="chip">NumPy</span>
+        </div>
+        <div class="mt-4 flex gap-4">
+          <a class="link" target="_blank" href="https://github.com/vallurudineshnayadu-create/EMOTION-BASED-MUSIC-RECOMMENDER">GitHub</a>
+        </div>
+      </article>
+
+      <!-- Card 2 -->
+      <article class="tilt glass-card" data-animate="fade">
+        <div class="rounded-xl bg-white/90 p-2">
+          <img src="assets/proj-store.jpg" alt="Mini E-Commerce Website" class="h-64 w-full rounded-lg object-contain" />
+        </div>
+        <h3 class="mt-4 text-lg font-semibold text-ink">Mini E-Commerce Website</h3>
+        <p class="mt-1 text-sm text-mute">Responsive storefront with product listing, cart flow, and simple checkout UX.</p>
+        <div class="mt-3 flex flex-wrap gap-2">
+          <span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">JavaScript</span>
+        </div>
+        <div class="mt-4 flex gap-4">
+          <a class="link" target="_blank" href="https://github.com/vallurudineshnayadu-create/FUTURE_FS_02">GitHub</a>
+        </div>
+      </article>
+
+      <!-- Card 3 -->
+      <article class="tilt glass-card" data-animate="fade">
+        <div class="rounded-xl bg-white/90 p-2">
+          <img src="assets/proj-shoes.jpg" alt="Campus Shoe Model Website" class="h-64 w-full rounded-lg object-contain" />
+        </div>
+        <h3 class="mt-4 text-lg font-semibold text-ink">Campus Shoe Model Website</h3>
+        <p class="mt-1 text-sm text-mute">Clean product page with hero highlights, colorways, and clear CTAs.</p>
+        <div class="mt-3 flex flex-wrap gap-2">
+          <span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">JS</span>
+        </div>
+        <div class="mt-4 flex gap-4">
+          <a class="link" target="_blank" href="https://github.com/vallurudineshnayadu-create">GitHub</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ========================= CONTACT ========================= -->
+  <section id="contact" class="container py-12 md:py-16">
+    <h2 class="text-3xl font-bold" style="font-family:Poppins, Inter, sans-serif;">Contact</h2>
+    <p class="text-mute">Reach out for projects, collaborations, or just to say hi!</p>
+
+    <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <a class="glass-card flex items-center gap-3" href="mailto:vallurudineshnayadu@gmail.com" data-animate="fade">
+        <span class="grid h-9 w-9 place-items-center rounded-lg bg-blue-100 text-lg">✉</span>
+        <div><h3 class="font-semibold">Email</h3><p class="text-mute">vallurudineshnayadu@gmail.com</p></div>
+      </a>
+
+      <a class="glass-card flex items-center gap-3" target="_blank" href="https://www.linkedin.com/in/venkata-dinesh-valluru-884822350/" data-animate="fade">
+        <span class="grid h-9 w-9 place-items-center rounded-lg bg-blue-100 text-lg">in</span>
+        <div><h3 class="font-semibold">LinkedIn</h3><p class="text-mute">Venkata Dinesh Valluru</p></div>
+      </a>
+
+      <a class="glass-card flex items-center gap-3" target="_blank" href="https://github.com/vallurudineshnayadu-create" data-animate="fade">
+        <span class="grid h-9 w-9 place-items-center rounded-lg bg-blue-100 text-lg">★</span>
+        <div><h3 class="font-semibold">GitHub</h3><p class="text-mute">@vallurudineshnayadu-create</p></div>
+      </a>
+    </div>
+
+    <footer class="mt-12 text-center text-mute">
+      © <span id="year"></span> Venkata Dinesh Valluru. All rights reserved.
+    </footer>
+  </section>
+
+  <script src="script.js?v=11"></script>
+</body>
+</html>

@@ -1,0 +1,140 @@
+/* === Animated Premium Background === */
+.bg-anim{
+  background:
+    radial-gradient(1100px 520px at 10% -10%, #d9e6ff 0%, transparent 50%),
+    radial-gradient(1100px 520px at 90% -20%, #e7f2ff 0%, transparent 50%),
+    linear-gradient(180deg,#F3F7FF 0%,#ECF2FB 100%);
+  animation: bgShift 18s ease-in-out infinite alternate;
+}
+@keyframes bgShift{
+  0%  { filter: hue-rotate(0deg) saturate(1); transform: translateY(0); }
+  100%{ filter: hue-rotate(6deg) saturate(1.02); transform: translateY(-6px); }
+}
+
+/* Subtle wireframe shapes */
+.bg-shapes .shape{
+  position:fixed; z-index:-1; border:1px solid rgba(15,23,42,0.10); opacity:.28;
+  border-radius:24px; backdrop-filter: blur(.5px);
+}
+.s1{ width:220px;height:220px; top:18%; left:-60px; transform:rotate(12deg); }
+.s2{ width:160px;height:160px; bottom:12%; right:8%; transform:rotate(-8deg); }
+.s3{ width:260px;height:140px; bottom:28%; left:18%; transform:rotate(4deg); }
+
+/* Active nav highlight */
+.nav-link.active{ background:rgba(0,0,0,.05); color:#0F172A; }
+
+/* ---------- Buttons & Chips ---------- */
+.btn-primary{
+  display:inline-block; background:#2563EB; color:#fff;
+  padding:.75rem 1.25rem; border-radius:14px; font-weight:700;
+  box-shadow: 0 8px 20px rgba(37,99,235,.18);
+  transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
+}
+.btn-primary:hover{ transform: translateY(-2px); box-shadow: 0 10px 24px rgba(37,99,235,.24); background:#1e55cf; }
+
+.btn-ghost{
+  display:inline-block; padding:.75rem 1.25rem; border-radius:14px; font-weight:700;
+  border:1px solid rgba(15,23,42,.12); background:rgba(255,255,255,.72);
+  backdrop-filter: blur(6px); transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
+}
+.btn-ghost:hover{ transform: translateY(-2px); box-shadow: 0 8px 20px rgba(15,23,42,.08); background:#fff; }
+
+.btn-chip{
+  display:inline-block; padding:.5rem .9rem; border-radius:10px; font-weight:600; font-size:.9rem;
+  border:1px solid rgba(15,23,42,.10); background:rgba(255,255,255,.75); backdrop-filter: blur(6px);
+  transition: transform .16s ease, background .16s ease;
+}
+.btn-chip:hover{ transform: translateY(-1px); background:#fff; }
+
+.chip{
+  border-radius:9999px; background:#eef2ff; border:1px solid rgba(15,23,42,.08);
+  padding:.25rem .75rem; font-size:.8rem; font-weight:600;
+}
+
+/* ---------- Glassmorphism ---------- */
+.glass{
+  border:1px solid rgba(15,23,42,.10);
+  background: linear-gradient(180deg, rgba(255,255,255,.85), rgba(255,255,255,.78));
+  backdrop-filter: blur(10px);
+  box-shadow: 0 18px 40px rgba(15,23,42,.06);
+}
+.glass-tile{
+  border:1px solid rgba(15,23,42,.10);
+  background: rgba(255,255,255,.82);
+  backdrop-filter: blur(6px);
+  border-radius: 16px; padding: 1rem;
+}
+.glass-card{
+  border:1px solid rgba(15,23,42,.10);
+  background: linear-gradient(180deg, rgba(255,255,255,.86), rgba(255,255,255,.80));
+  backdrop-filter: blur(8px);
+  border-radius: 18px; padding: 1rem;
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+.glass-card:hover{ transform: translateY(-3px); box-shadow: 0 14px 32px rgba(15,23,42,.10); }
+
+/* ---------- Gradient Ring (Circle for HOME) ---------- */
+.profile-ring{
+  position:relative; padding:6px; border-radius:9999px;
+  background: conic-gradient(from 210deg, #3B82F6, #6366F1, #8B5CF6, #3B82F6);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.profile-ring:hover{ transform: translateZ(0) scale(1.03); box-shadow: 0 0 18px rgba(99,102,241,.45); }
+
+/* Circle mask container so any photo becomes a perfect circle */
+.avatar-circle{
+  position: relative;
+  aspect-ratio: 1 / 1;
+  width: 100%;
+  border-radius: 9999px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 10px 24px rgba(15,23,42,.06);
+}
+/* Headshot focus (H1): zoom slightly and focus upper area */
+.avatar-img{
+  height:100%; width:100%; display:block;
+  object-fit: cover;            /* fill the circle */
+  object-position: 50% 22%;     /* push focus to face (higher) */
+}
+.avatar-img--headshot{
+  transform: scale(1.06);       /* subtle zoom for headshot power */
+  transform-origin: center;
+}
+
+/* ---------- Rectangle Ring (About) + Soft Inner Shadow ---------- */
+.profile-ring-rect{
+  position:relative;
+  padding:8px;
+  border-radius:30px;                   /* R3 corners */
+  background: conic-gradient(from 210deg, #3B82F6, #6366F1, #8B5CF6, #3B82F6);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.profile-ring-rect:hover{ transform: scale(1.03); box-shadow: 0 0 22px rgba(99,102,241,.42); }
+
+/* Inner container to hold image + inner shadow overlay */
+.profile-ring-rect .inner{
+  position:relative;
+  height:100%; width:100%;
+  border-radius:26px;
+  overflow:hidden; background:#ffffff;
+}
+/* Soft inner shadow (premium) */
+.profile-ring-rect .inner::after{
+  content:""; position:absolute; inset:0; pointer-events:none; border-radius:inherit;
+  box-shadow:
+    inset 0 18px 36px rgba(15,23,42,.10),
+    inset 0 -16px 28px rgba(15,23,42,.06),
+    inset 0 0 0 1px rgba(15,23,42,.05);
+}
+
+/* Typing caret */
+.caret{
+  display:inline-block; width:2px; height:1.25em; margin-left:2px;
+  background:#0F172A; vertical-align:baseline; animation: blink .9s steps(1) infinite;
+}
+@keyframes blink{ 50%{ opacity:0; } }
+
+/* Minimal link */
+.link{ color:#2563EB; font-weight:700; }
+.link:hover{ text-decoration: underline; }
